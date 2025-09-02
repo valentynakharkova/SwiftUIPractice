@@ -1,5 +1,5 @@
 //
-//  SpotifyHomeViewRecentsCell.swift
+//  RecentsCell.swift
 //  SwiftUIPractice
 //
 //  Created by Valentyna Kharkova on 02.09.2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SpotifyHomeViewRecentsCell: View {
+struct RecentsCell: View {
     
     var imageName: String = Constants.randomImage
     var title: String = "Some random title for this View"
@@ -34,12 +34,12 @@ struct SpotifyHomeViewRecentsCell: View {
         Color.spotifyBlack.ignoresSafeArea()
         VStack {
             HStack {
-                SpotifyHomeViewRecentsCell()
-                SpotifyHomeViewRecentsCell()
+                RecentsCell()
+                RecentsCell()
             }
             HStack {
-                SpotifyHomeViewRecentsCell()
-                SpotifyHomeViewRecentsCell()
+                RecentsCell()
+                RecentsCell()
             }
         }
     }

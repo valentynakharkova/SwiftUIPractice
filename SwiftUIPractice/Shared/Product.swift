@@ -48,10 +48,8 @@ struct Product: Codable, Identifiable {
 }
 
 struct ProductRow: Identifiable {
-    
     let id = UUID().uuidString
     let title: String
-    let product: [Product]
-    
+    let products: [Product]
 }
 

@@ -1,5 +1,5 @@
 //
-//  SpotifyHomeViewHeaderCell.swift
+//  HeaderCell.swift
 //  SwiftUIPractice
 //
 //  Created by Valentyna Kharkova on 02.09.2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SpotifyHomeViewHeaderCell: View {
+struct HeaderCell: View {
     
     var title: String = "All"
     var isSelected: Bool = false
@@ -37,9 +37,9 @@ extension View {
     ZStack {
         Color.spotifyBlack.ignoresSafeArea()
         VStack(spacing: 10) {
-            SpotifyHomeViewHeaderCell(title: "Title")
-            SpotifyHomeViewHeaderCell(isSelected: true)
-            SpotifyHomeViewHeaderCell(title: "Title goes here", isSelected: true)
+            HeaderCell(title: "Title")
+            HeaderCell(isSelected: true)
+            HeaderCell(title: "Title goes here", isSelected: true)
         }
     }
 }

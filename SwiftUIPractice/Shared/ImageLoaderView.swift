@@ -12,7 +12,6 @@ struct ImageLoaderView: View {
     
     var urlString: String = Constants.randomImage
     
-    
     var body: some View {
         Rectangle()
             .opacity(0.001)
@@ -22,7 +21,6 @@ struct ImageLoaderView: View {
                     .indicator(.activity)
                     .aspectRatio(contentMode: .fill)
                     .allowsHitTesting(false)
-                    
             }
             .clipped()
     }
