@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SpotifyHomeView: View {
     var body: some View {
-        Text("Hello, World!")
+        
     }
 }
 
