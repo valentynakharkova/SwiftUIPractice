@@ -8,11 +8,38 @@
 import SwiftUI
 
 struct SpotifyHomeViewHeaderCell: View {
+    
+    var title: String = "All"
+    var isSelected: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(title)
+            .font(.callout)
+            .frame(minWidth: 35)
+            .padding(.vertical, 8)
+            .padding(.horizontal, 10)
+            .themeColors(isSelected: isSelected)
+            .cornerRadius(16)
+            
+    }
+}
+
+extension View {
+    
+    func themeColors(isSelected: Bool) -> some View {
+        self
+            .background(isSelected ? Color.spotifyGreen : Color.spotifyDarkGray)
+            .foregroundStyle(isSelected ? Color.spotifyBlack : Color.spotifyWhite)
     }
 }
 
 #Preview {
-    SpotifyHomeViewHeaderCell()
+    ZStack {
+        Color.spotifyBlack.ignoresSafeArea()
+        VStack(spacing: 10) {
+            SpotifyHomeViewHeaderCell(title: "Title")
+            SpotifyHomeViewHeaderCell(isSelected: true)
+            SpotifyHomeViewHeaderCell(title: "Title goes here", isSelected: true)
+        }
+    }
 }
