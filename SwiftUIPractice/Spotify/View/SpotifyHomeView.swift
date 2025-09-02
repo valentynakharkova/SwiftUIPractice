@@ -21,9 +21,12 @@ struct SpotifyHomeView: View {
                 LazyVStack(spacing: 1, pinnedViews: .sectionHeaders) {
                     Section {
                         VStack(spacing: 16) {
-                           recentsSection
+                            recentsSection
                                 .padding(.horizontal, 16)
                             
+                            if let product = viewModel.products.first {
+                                newReleaseSection(product: product)
+                            }
                             
                         }
                     } header: {
@@ -77,14 +80,29 @@ struct SpotifyHomeView: View {
     
     private var recentsSection: some View {
         NonLazyVGrid(columns: 2, alignment: .center, spacing: 10, items: viewModel.products) { product in
-                if let product {
-                    RecentsCell(imageName: product.firstImage, title: product.title)
-                        .asButton(.press) {
-                            
-                        }
-                }
+            if let product {
+                RecentsCell(imageName: product.firstImage, title: product.title)
+                    .asButton(.press) {
+                        
+                    }
             }
-        
+        }
+    }
+    
+    private func newReleaseSection(product: Product) -> some View {
+        NewReleaseCell(
+            imageName: product.firstImage,
+            headline: product.brand,
+            subheadline: product.category,
+            title: product.title,
+            subtitle: product.description,
+            onAddToPlaylistPressed: {
+                
+            },
+            onPlayPressed: {
+                
+            }
+        )
     }
 }
 
