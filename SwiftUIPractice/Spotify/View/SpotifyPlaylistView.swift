@@ -31,6 +31,20 @@ struct SpotifyPlaylistView: View {
                         viewModel.showHeader = frame.maxY < 150
                     }
                     
+                    PlaylistDescriptionCell(
+                        descriptionText: product.description,
+                        userName: product.firstImage,
+                        subheadline: product.category,
+                        onAddToPlaylistPressed: nil,
+                        onDownloadPressed: nil,
+                        onSharePressed: nil,
+                        onEllipsisPressed: nil,
+                        onShufflePressed: nil,
+                        onPlayPressed: nil
+                    )
+                    .padding(.horizontal, 16)
+                    
+                    
                     
                 }
             }
