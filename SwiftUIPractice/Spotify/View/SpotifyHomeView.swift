@@ -28,6 +28,8 @@ struct SpotifyHomeView: View {
                                 newReleaseSection(product: product)
                             }
                             
+                            listRows
+                            
                         }
                     } header: {
                         header
@@ -103,6 +105,34 @@ struct SpotifyHomeView: View {
                 
             }
         )
+    }
+    
+    private var listRows: some View {
+        ForEach(viewModel.productRows) { row in
+            VStack(spacing: 8) {
+                Text(row.title)
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.spotifyWhite)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 16)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(alignment: .top, spacing: 16) {
+                        ForEach(row.products) { product in
+                            ImageTitleRowCell(
+                                imageName: product.firstImage,
+                                imageSize: 120,
+                                title: product.title
+                            )
+                            .asButton(.press) {
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
