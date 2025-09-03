@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct SpotifyPlaylistView: View {
+    
+    @StateObject private var viewModel = SpotifyPlaylistViewModel()
+    
+    var products: Product = .mock
+    var user: User = .mock
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color.spotifyBlack.ignoresSafeArea()
+            
+            ScrollView(.vertical, showsIndicators: false) {
+                LazyVStack(spacing: 12) {
+                    
+                }
+            }
+        
+        }
     }
 }
 
