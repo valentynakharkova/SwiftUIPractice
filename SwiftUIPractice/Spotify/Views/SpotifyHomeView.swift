@@ -7,8 +7,11 @@
 
 import SwiftUI
 import SwiftfulUI
+import SwiftfulRouting
 
 struct SpotifyHomeView: View {
+    
+    @Environment(\.router) var router
     
     @StateObject private var viewModel = SpotifyHomeViewModel()
     
@@ -85,7 +88,7 @@ struct SpotifyHomeView: View {
             if let product {
                 RecentsCell(imageName: product.firstImage, title: product.title)
                     .asButton(.press) {
-                        
+                        goToPlaylistView(product: product)
                     }
             }
         }
@@ -99,10 +102,10 @@ struct SpotifyHomeView: View {
             title: product.title,
             subtitle: product.description,
             onAddToPlaylistPressed: {
-                
+                goToPlaylistView(product: product)
             },
             onPlayPressed: {
-                
+                goToPlaylistView(product: product)
             }
         )
     }
@@ -119,14 +122,14 @@ struct SpotifyHomeView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment: .top, spacing: 16) {
-                        ForEach(row.products) { product in
+                        ForEach(row.products.shuffled()) { product in
                             ImageTitleRowCell(
                                 imageName: product.firstImage,
                                 imageSize: 120,
                                 title: product.title
                             )
                             .asButton(.press) {
-                                
+                                goToPlaylistView(product: product)
                             }
                         }
                     }
@@ -134,8 +137,18 @@ struct SpotifyHomeView: View {
             }
         }
     }
+    
+    private func goToPlaylistView(product: Product) {
+        guard let currentUser = viewModel.currentUser else { return }
+        
+        router.showScreen(.push) { _ in
+            SpotifyPlaylistView(product: product, user: currentUser)
+        }
+    }
 }
 
 #Preview {
-    SpotifyHomeView()
+    RouterView { _ in
+        SpotifyHomeView()
+    }
 }
