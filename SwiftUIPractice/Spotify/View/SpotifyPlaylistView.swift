@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import SwiftfulUI
 
 struct SpotifyPlaylistView: View {
     
     @StateObject private var viewModel = SpotifyPlaylistViewModel()
     
-    var products: Product = .mock
+    var product: Product = .mock
     var user: User = .mock
     
     var body: some View {
@@ -20,6 +21,16 @@ struct SpotifyPlaylistView: View {
             
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVStack(spacing: 12) {
+                    PlaylistHeaderCell(
+                        imageName: product.firstImage,
+                        height: 250,
+                        title: product.title,
+                        subtitle: product._brand,
+                    )
+                    .readingFrame { frame in
+                        viewModel.showHeader = frame.maxY < 150
+                    }
+                    
                     
                 }
             }
