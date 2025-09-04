@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import SwiftfulRouting
 
 struct BumbleChatsView: View {
+    
+    @Environment(\.router) var router
     
     @StateObject private var viewModel = BumbleChatsViewModel()
     
@@ -35,7 +38,7 @@ struct BumbleChatsView: View {
         HStack {
             Image(systemName: "line.horizontal.3")
                 .onTapGesture {
-//                    router.dismissScreen()
+                    router.dismissScreen()
                 }
             Spacer(minLength: 0)
             Image(systemName: "magnifyingglass")
@@ -103,5 +106,7 @@ struct BumbleChatsView: View {
 }
 
 #Preview {
-    BumbleChatsView()
+    RouterView { _ in
+        BumbleChatsView()
+    }
 }

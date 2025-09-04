@@ -24,6 +24,12 @@ struct ContentView: View {
                 }
                 
             Text("Bumble")
+                .foregroundStyle(.bumbleYellow)
+                .asButton(.press) {
+                    router.showScreen(.push) { _ in
+                        BumbleHomeView()
+                    }
+                }
             Text("Netflix")
         }
         .font(.headline)
