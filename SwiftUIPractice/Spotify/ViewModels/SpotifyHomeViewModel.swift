@@ -7,7 +7,7 @@
 
 import Foundation
 
- class SpotifyHomeViewModel: ObservableObject {
+class SpotifyHomeViewModel: ObservableObject {
     
     @Published var currentUser: User? = nil
     @Published var selectedCategory: Category? = nil
