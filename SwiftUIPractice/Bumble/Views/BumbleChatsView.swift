@@ -19,7 +19,7 @@ struct BumbleChatsView: View {
                 header
                     .padding(16)
                 
-//                matchQueueSection
+                matchQueueSection
                 
 //                recentChatsSection
                 
@@ -59,7 +59,7 @@ struct BumbleChatsView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(spacing: 16) {
                     ForEach(viewModel.allUsers) { user in
-//                        BumbleProfileImageCell(imageName: user.image, percentageRemaining: Double.random(in: 0...1), hasNewMessage: Bool.random())
+                        ProfileImageCell(imageName: user.image, percentageRemaining: Double.random(in: 0...1), hasNewMessage: Bool.random())
                     }
                 }
                 .padding(.horizontal, 16)

@@ -237,4 +237,6 @@ struct CardView: View {
 
 #Preview {
     CardView()
+        .padding(.vertical, 40)
+        .padding(.horizontal, 16)
 }
