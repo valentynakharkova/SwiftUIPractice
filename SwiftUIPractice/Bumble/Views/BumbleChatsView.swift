@@ -21,11 +21,9 @@ struct BumbleChatsView: View {
                 
                 matchQueueSection
                 
-//                recentChatsSection
+                recentChatsSection
                 
             }
-            
-            
         }
         .task {
             await viewModel.getData()
@@ -87,14 +85,14 @@ struct BumbleChatsView: View {
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVStack(spacing: 16) {
                     ForEach(viewModel.allUsers) { user in
-//                        BumbleChatPreviewCell(
-//                            imageName: user.image,
-//                            percentagEremaining: Double.random(in: 0...1),
-//                            hasNewMessega: Bool.random(),
-//                            userName: user.firstName,
-//                            lastChatMessage: user.aboutMe,
-//                            isYourMove: Bool.random()
-//                        )
+                        ChatPreviewCell(
+                            imageName: user.image,
+                            percentageRemaining: Double.random(in: 0...1),
+                            hasNewMessage: Bool.random(),
+                            userName: user.firstName,
+                            lastChatMessage: user.aboutMe,
+                            isYourMove: Bool.random()
+                        )
                     }
                 }
                 .padding(16)
