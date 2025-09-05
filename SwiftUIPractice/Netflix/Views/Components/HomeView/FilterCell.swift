@@ -8,11 +8,44 @@
 import SwiftUI
 
 struct FilterCell: View {
+    
+    var title: String = "Categories"
+    var isDropdown: Bool = false
+    var isSelected: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack(spacing: 4) {
+            Text(title)
+            
+            if isDropdown {
+                Image(systemName: "chevron.down")
+            }
+        }
+        .padding(.vertical, 8)
+        .padding(.horizontal, 16)
+        .foregroundStyle(.netflixLightGray)
+        .background {
+            ZStack {
+                Capsule(style: .circular)
+                    .fill(.netflixDarkGray)
+                    .opacity(isSelected ? 1 : 0)
+                
+                Capsule(style: .circular)
+                    .stroke(lineWidth: 1)
+                
+            }
+        }
+        .foregroundStyle(.netflixLightGray)
     }
 }
 
 #Preview {
-    FilterCell()
+    ZStack {
+        Color.netflixDarkRed.ignoresSafeArea()
+        VStack {
+            FilterCell(isDropdown: true)
+            FilterCell(isSelected: true)
+            FilterCell()
+        }
+    }
 }
