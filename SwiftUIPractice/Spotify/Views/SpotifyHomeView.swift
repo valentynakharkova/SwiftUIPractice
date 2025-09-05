@@ -123,7 +123,7 @@ struct SpotifyHomeView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(alignment: .top, spacing: 16) {
-                        ForEach(row.products.shuffled()) { product in
+                        ForEach(row.products) { product in
                             ImageTitleRowCell(
                                 imageName: product.firstImage,
                                 imageSize: 120,
