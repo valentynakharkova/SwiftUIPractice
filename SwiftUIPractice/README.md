@@ -66,9 +66,9 @@ DummyJSON API
 ## 👨‍💻 Author
 Valentyna Kharkova
 
-GitHub: @valentynakharkova
-LinkedIn: https://www.linkedin.com/in/valentyna-kharkova/
-Email: valentynakharkova@gmail.com
+1. GitHub: @valentynakharkova
+2. LinkedIn: https://www.linkedin.com/in/valentyna-kharkova/
+3. Email: valentynakharkova@gmail.com
 
 ## 🙏 Acknowledgments
 
