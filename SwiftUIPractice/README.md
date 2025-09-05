@@ -53,14 +53,14 @@ DummyJSON API
 
 ## 📸 Screenshots
 
-![Launch Screen](Assets/README/launch-screen.png)
-![List View](Assets/README/list-view.png)
-![Spotify Home View](Assets/README/spotify-home-view.png)
-![Spotify Playlist View](Assets/README/spotify-playlist-view.png)
-![Bumble Home View](Assets/README/bumble-home-view.png)
-![Bumble Chats View](Assets/README/bumble-chats-view.png)
-![Netflix Home View](Assets/README/netflix-home-view.png)
-![Netflix Movie Details View](Assets/README/netflix-movie-details-view.png)
+![Launch Screen](README-Assets/launch-screen.png)
+![List View](README-Assets/list-view.png)
+![Spotify Home View](README-Assets/spotify-home-view.png)
+![Spotify Playlist View](README-Assets/spotify-playlist-view.png)
+![Bumble Home View](README-Assets/bumble-home-view.png)
+![Bumble Chats View](README-Assets/bumble-chats-view.png)
+![Netflix Home View](README-Assets/netflix-home-view.png)
+![Netflix Movie Details View](README-Assets/netflix-movie-details-view.png)
 
 
 ## 👨‍💻 Author
