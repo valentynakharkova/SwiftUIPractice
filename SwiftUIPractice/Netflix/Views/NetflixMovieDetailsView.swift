@@ -24,6 +24,7 @@ struct NetflixMovieDetailsView: View {
                     VStack(alignment: .leading, spacing: 16) {
                         detailsProductSection
                         
+                        
                     }
                     .padding(8)
                 }
@@ -54,6 +55,7 @@ struct NetflixMovieDetailsView: View {
             onDownloadPressed: { }
         )
     }
+    
 }
 
 #Preview {
