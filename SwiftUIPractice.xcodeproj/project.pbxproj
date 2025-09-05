@@ -26,6 +26,11 @@
 			path = SwiftUIPractice;
 			sourceTree = "<group>";
 		};
+		D08081BD2E6B2669008298E5 /* README-Assets */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "README-Assets";
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +54,7 @@
 				D0243F972E65CB9B00087570 /* Products */,
 				D080819D2E6B10A5008298E5 /* README.md */,
 				D08081A02E6B209A008298E5 /* .gitignore */,
+				D08081BD2E6B2669008298E5 /* README-Assets */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,6 +83,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				D0243F982E65CB9B00087570 /* SwiftUIPractice */,
+				D08081BD2E6B2669008298E5 /* README-Assets */,
 			);
 			name = SwiftUIPractice;
 			packageProductDependencies = (
