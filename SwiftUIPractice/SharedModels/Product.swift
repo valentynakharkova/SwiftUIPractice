@@ -29,6 +29,10 @@ struct Product: Codable, Identifiable {
     var _brand: String {
         brand ?? ""
     }
+    
+    let recentlyAdded: Bool = {
+        return Int.random(in: 1...4) == 1
+    }()
 
     static var mock: Product {
         Product(
