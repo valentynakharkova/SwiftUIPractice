@@ -7,7 +7,8 @@
 
 import Foundation
 
-class SpotifyPlaylistViewModel: ObservableObject {
+@MainActor
+final class SpotifyPlaylistViewModel: ObservableObject {
     
     @Published var products: [Product] = []
     @Published var showHeader: Bool = true

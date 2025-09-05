@@ -51,6 +51,7 @@ struct SpotifyHomeView: View {
     private var header: some View {
         HStack(spacing: 0) {
             ZStack {
+                // MARK: Returns screen back to Go to: List
                 if let currentUser = viewModel.currentUser {
                     ImageLoaderView(urlString: currentUser.image)
                         .background(.spotifyWhite)

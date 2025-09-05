@@ -69,6 +69,7 @@ struct BumbleHomeView: View {
                     .onTapGesture {
                         
                     }
+                // MARK: Returns screen back to Go to: List
                 Image(systemName: "arrow.uturn.left")
                     .padding(8)
                     .background(.black.opacity(0.001))

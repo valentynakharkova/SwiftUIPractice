@@ -7,8 +7,11 @@
 
 import SwiftUI
 import SwiftfulUI
+import SwiftfulRouting
 
 struct NetflixHomeView: View {
+    
+    @Environment(\.router) var router
     
     @StateObject private var viewModel = NetflixHomeViewModel()
     
@@ -75,11 +78,13 @@ struct NetflixHomeView: View {
     private var header: some View {
         
         HStack(spacing: 0) {
+            
+            // MARK: Returns screen back to Go to: List
             Text("For You")
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .font(.title)
                 .onTapGesture {
-//                    router.dismissScreen()
+                    router.dismissScreen()
                 }
             
             HStack(spacing: 16) {
@@ -172,7 +177,7 @@ struct NetflixHomeView: View {
                                     topTenRanking: rowIndex == 1 ? (index + 1) : nil
                                 )
                                 .onTapGesture {
-//                                    onProductPressed(product: product)
+                                    onProductPressed(product: product)
                                 }
                             }
                         }
@@ -184,12 +189,14 @@ struct NetflixHomeView: View {
     }
     
     private func onProductPressed(product: Product) {
-        
+        router.showScreen(.sheet) { _ in
+            NetflixMovieDetailsView(product: product)
+        }
     }
-    
-    
 }
 
 #Preview {
-    NetflixHomeView()
+    RouterView { _ in
+        NetflixHomeView()
+    }
 }

@@ -19,7 +19,7 @@ struct LaunchScreen: View {
                 .resizable()
                 .scaledToFill()
                 .ignoresSafeArea()
-
+            
             Text("SWIFTUI PRACTICE")
                 .font(.system(size: 40))
                 .fontWeight(.bold)
@@ -33,7 +33,7 @@ struct LaunchScreen: View {
                     }
                 }
         }
-
+        
     }
 }
 

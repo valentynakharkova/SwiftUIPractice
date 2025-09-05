@@ -7,10 +7,11 @@
 
 import Foundation
 
-class NetflixMovieDetailsViewModel: ObservableObject {
+@MainActor
+final class NetflixMovieDetailsViewModel: ObservableObject {
     
     @Published var progress: Double = 0.5
-    @Published var isMyList: Bool = true
+    @Published var isMyList: Bool = false
     @Published var products: [Product] = []
     
     func getData() async {

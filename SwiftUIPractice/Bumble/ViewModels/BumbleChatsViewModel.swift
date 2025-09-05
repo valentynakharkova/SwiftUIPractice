@@ -7,7 +7,8 @@
 
 import Foundation
 
-class BumbleChatsViewModel: ObservableObject {
+@MainActor
+final class BumbleChatsViewModel: ObservableObject {
     
     @Published var allUsers: [User] = []
     

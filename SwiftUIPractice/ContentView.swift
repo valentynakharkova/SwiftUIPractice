@@ -22,7 +22,6 @@ struct ContentView: View {
                         SpotifyHomeView()
                     }
                 }
-                
             Text("Bumble")
                 .foregroundStyle(.bumbleYellow)
                 .asButton(.press) {
@@ -31,6 +30,12 @@ struct ContentView: View {
                     }
                 }
             Text("Netflix")
+                .foregroundStyle(.netflixRed)
+                .asButton(.press) {
+                    router.showScreen(.push) { _ in
+                        NetflixHomeView()
+                    }
+                }
         }
         .font(.headline)
         .navigationTitle("Go to:")

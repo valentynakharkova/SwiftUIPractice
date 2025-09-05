@@ -7,8 +7,8 @@
 
 import Foundation
 
-
-class BumbleHomeViewModel: ObservableObject {
+@MainActor
+final class BumbleHomeViewModel: ObservableObject {
     
 
     @Published var filters: [String] = ["Everyone", "Trending"]

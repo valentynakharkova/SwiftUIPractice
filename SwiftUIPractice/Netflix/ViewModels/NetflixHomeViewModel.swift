@@ -7,7 +7,8 @@
 
 import Foundation
 
-class NetflixHomeViewModel: ObservableObject {
+@MainActor
+final class NetflixHomeViewModel: ObservableObject {
     
     @Published var filters = FilterModel.mockArray
     @Published var selectedFilter: FilterModel? = nil
@@ -41,6 +42,4 @@ class NetflixHomeViewModel: ObservableObject {
             
         }
     }
-    
-    
 }
